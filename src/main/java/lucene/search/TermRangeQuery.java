@@ -23,6 +23,7 @@ import lucene.util.automaton.Automata;
 import lucene.util.automaton.Automaton;
 
 /**
+ *  使用范围搜索查询匹配文档
  * A Query that matches documents within an range of terms.
  *
  * <p>This query matches the documents looking for terms that fall into the
@@ -39,9 +40,13 @@ import lucene.util.automaton.Automaton;
  */
 
 public class TermRangeQuery extends AutomatonQuery {
+  //范围的下限
   private final BytesRef lowerTerm;
+  //范围的上线
   private final BytesRef upperTerm;
+  //是否包含下线
   private final boolean includeLower;
+  //是否包含上线
   private final boolean includeUpper;
 
   /**
