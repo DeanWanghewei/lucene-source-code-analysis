@@ -27,9 +27,9 @@ import java.nio.charset.CodingErrorAction;
 import java.nio.charset.StandardCharsets;
 
 /**
-  A Term represents a word from text.  This is the unit of search.  It is
-  composed of two elements, the text of the word, as a string, and the name of
-  the field that the text occurred in.
+  A Term represents(出现) a word from text.  This is the unit（最小单位） of search.  It is
+  composed of two elements（它是由两个元素组成）, the text of the word, as a string, and the name of
+  the field that the text occurred in（出现的）.
 
   Note that terms may represent more than words from text fields, but also
   things like dates, email addresses, urls, etc.  */
@@ -38,14 +38,15 @@ public final class Term implements Comparable<Term> {
   String field;
   BytesRef bytes;
 
-  /** Constructs a Term with the given field and bytes.
+  /** Constructs a Term with the given field and bytes.（使用给定的字段和字节构造一个Term。）
    * <p>Note that a null field or null bytes value results in undefined
-   * behavior for most Lucene APIs that accept a Term parameter.
+   * behavior（行为） for most Lucene APIs that accept a Term parameter.
    *
    * <p>The provided BytesRef is copied when it is non null.
    */
   public Term(String fld, BytesRef bytes) {
     field = fld;
+    //todo deepCopyOf  设置0 offset？？
     this.bytes = bytes == null ? null : BytesRef.deepCopyOf(bytes);
   }
 

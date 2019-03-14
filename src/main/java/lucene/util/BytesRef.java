@@ -16,9 +16,14 @@
  */
 package lucene.util;
 
-/** Represents byte[], as a slice (offset + length) into an
+/**
+ *  封装了 JDK的Bytes 并且添加了两个属性  offset 和length。
+ *
+ * Represents byte[], as a slice (offset + length) into an
  *  existing byte[].  The {@link #bytes} member should never be null;
  *  use {@link #EMPTY_BYTES} if necessary.
+ *  将byte []表示为现有byte []的切片（offset + length）。
+ *  bytes成员不应该为null; 必要时使用EMPTY_BYTES。
  *
  * <p><b>Important note:</b> Unless otherwise noted, Lucene uses this class to
  * represent terms that are encoded as <b>UTF8</b> bytes in the index. To
