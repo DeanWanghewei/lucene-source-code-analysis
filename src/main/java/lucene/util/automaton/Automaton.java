@@ -32,14 +32,17 @@ import java.util.Set;
 //   - could use packed int arrays instead
 //   - could encode dest w/ delta from to?
 
-/** Represents an automaton and all its states and transitions.  States
- *  are integers and must be created using {@link #createState}.  Mark a
- *  state as an accept state using {@link #setAccept}.  Add transitions
- *  using {@link #addTransition}.  Each state must have all of its
- *  transitions added at once; if this is too restrictive then use
- *  {@link Automaton.Builder} instead.  State 0 is always the
- *  initial state.  Once a state is finished, either
- *  because you've starting adding transitions to another state or you
+/**
+ * Represents an automaton and all its states and transitions.
+ * 表示一个自动机及其所有状态和转换。
+ *  States are integers and must be created using {@link #createState}.
+ *  Mark a state as an accept state using {@link #setAccept}.
+ *  使用{@link #setAccept}将状态标记为接受状态。
+ *  Add transitions using {@link #addTransition}.
+ *  Each state must have all of its transitions added at once; if this is too restrictive（限制） then use
+ *  {@link Automaton.Builder} instead.
+ *  State 0 is always the initial state.
+ *  Once a state is finished, either because you've starting adding transitions to another state or you
  *  call {@link #finishState}, then that states transitions are sorted
  *  (first by min, then max, then dest) and reduced (transitions with
  *  adjacent labels going to the same dest are combined).
@@ -48,8 +51,8 @@ import java.util.Set;
 
 public class Automaton implements Accountable {
 
-  /** Where we next write to the int[] states; this increments by 2 for
-   *  each added state because we pack a pointer to the transitions
+  /** Where we next write to the int[] states; this increments（增加） by 2 for
+   *  each added state because we pack a pointer to the transitions（转换）
    *  array and a count of how many transitions leave the state.  */
   private int nextState;
 
