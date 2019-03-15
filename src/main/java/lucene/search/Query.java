@@ -43,8 +43,8 @@ import java.io.IOException;
 */
 public abstract class Query {
 
-  /** Prints a query to a string, with <code>field</code> assumed to be the 
-   * default field and omitted.
+  /** Prints a query to a string, with <code>field</code> assumed（假定） to be the
+   * default field and omitted（省略）.
    */
   public abstract String toString(String field);
 
@@ -56,9 +56,10 @@ public abstract class Query {
 
   /**
    * Expert: Constructs an appropriate Weight implementation for this query.
+   *  为该查询构造适当的权重实现。
    * <p>
    * Only implemented by primitive queries, which re-write to themselves.
-   *
+   *  仅由基本查询实现，这些查询重写给它们自己。
    * @param scoreMode     How the produced scorers will be consumed.
    * @param boost         The boost that is propagated by the parent queries.
    */
