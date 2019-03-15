@@ -28,13 +28,14 @@ import java.util.Collections;
 public interface Accountable {
 
   /**
-   * Return the memory usage of this object in bytes. Negative values are illegal.
+   * Return the memory usage of this object in bytes. Negative（负数） values are illegal（非法的）.
    */
   long ramBytesUsed();
 
   /**
-   * Returns nested resources of this class. 
+   * Returns nested（嵌套的） resources（资源） of this class.
    * The result should be a point-in-time snapshot (to avoid race conditions).
+   * 结果应该是一个时间点快照(以避免竞态条件)。
    * @see Accountables
    */
   default Collection<Accountable> getChildResources() {
